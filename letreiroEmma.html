@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Letreiro de Mensagem</title>  
+    <style>  
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            background-color: #f0f0f0;  
+            font-family: Arial, sans-serif;  
+        }  
+        #letreiro {  
+            font-size: 24px;  
+            white-space: nowrap;  
+            overflow: hidden;  
+            width: 100%;  
+            box-sizing: border-box;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div id="letreiro"></div>  
+
+    <script>  
+        const mensagem = "olá Emanuelle, vc é mt gostosa e elegante. sabia? ";  
+        const letreiro = document.getElementById('letreiro');  
+
+        let pos = 0;  
+        function mostrarLetreiro() {  
+            letreiro.textContent = mensagem.slice(0, pos);  
+            pos++;  
+            if (pos > mensagem.length) {  
+                pos = 0; // Reinicia a animação  
+            }  
+        }  
+
+        setInterval(mostrarLetreiro, 300); // Altera a cada 300ms  
+    </script>  
+</body>  
+</html>
